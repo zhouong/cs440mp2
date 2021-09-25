@@ -65,7 +65,7 @@ def bfs(maze, ispart1=False):
                     break
 
     # add points to path from waypoint to start
-    if (maze.isObjective(to_add[0], to_add[1], to_add[2], ispart1)) :
+    if (not maze.isObjective(to_add[0], to_add[1], to_add[2], ispart1)) :
         return None
 
     while to_add != "start":
