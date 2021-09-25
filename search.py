@@ -63,12 +63,16 @@ def bfs(maze, ispart1=False):
                 queue.append(neighbor)
                 if maze.isObjective(neighbor[0], neighbor[1], neighbor[2], ispart1):
                     to_add = neighbor
-                    print("reached")
-                    print(maze.getStart())
-                    print(neighbor)
-                    print(visited.get(to_add))
+                    # print("reached")
+                    # print(maze.getStart())
+                    # print(neighbor)
+                    # print(visited.get(to_add))
                     break
 
+        if maze.isObjective(to_add[0], to_add[1], to_add[2], ispart1):
+            break   
+
+    # print("after reached")
     # add points to path from waypoint to start
     if (not maze.isObjective(to_add[0], to_add[1], to_add[2], ispart1)) :
         return None
