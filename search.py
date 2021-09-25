@@ -27,6 +27,7 @@ def search(maze, searchMethod):
     }.get(searchMethod, [])(maze)
 
 def bfs(maze, ispart1=False):
+    ispart1 = True
     # Write your code here
     """
     This function returns optimal path in a list, which contains start and objective.
@@ -62,6 +63,10 @@ def bfs(maze, ispart1=False):
                 queue.append(neighbor)
                 if maze.isObjective(neighbor[0], neighbor[1], neighbor[2], ispart1):
                     to_add = neighbor
+                    print("reached")
+                    print(maze.getStart())
+                    print(neighbor)
+                    print(visited.get(to_add))
                     break
 
     # add points to path from waypoint to start
